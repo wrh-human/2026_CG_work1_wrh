@@ -1,6 +1,6 @@
-# 计算机图形学实验报告：3D 立方体透视投影与变换实现
+# 计算机图形学实验二：旋转与变换
 
-本实验旨在通过 Taichi Lang 框架在 Mac M3 芯片（Metal 后端）上实现一个具有实时交互功能的 3D 立方体旋转渲染器。实验涵盖了坐标变换流水线（Transform Pipeline）的核心理论与实践。
+本实验旨在通过Taichi Lang框架在Mac M3芯片（本人所用）上实现一个具有实时交互功能的**三角形平面旋转**以及**3D方体旋转渲染器**。实验涵盖了**坐标变换基本workflow**的核心理论与实践。
 
 ---
 
@@ -12,9 +12,9 @@
 ```text
 Work1/
 ├── .gitignore              # 忽略 __pycache__ 等冗余文件
-├── main_cube.py            # 立方体渲染主程序 (M3 Metal 驱动)
-├── main_triangle.py        # 基础三角形渲染测试
-├── rotate.py               # 变换矩阵计算核心库 (Model/View/Projection)
+├── main_cube.py            # 完成选做任务：3D立方体渲染的main函数
+├── main_triangle.py        # 完成基础任务：平面三角形旋转的main函数
+├── rotate.py               # 涵盖绕z轴旋转等效果的变换矩阵计算函数
 └── videos/                 # 实验演示效果图
-    ├── cube_demo.gif       # 立方体旋转平移演示
-    └── triangle_demo.gif   # 基础光栅化演示
+    ├── cube_demo.gif       # 立方体demo
+    └── triangle_demo.gif   # 三角形demo
