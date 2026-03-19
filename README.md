@@ -75,11 +75,15 @@ def transform_kernel(mvp: ti.types.matrix(4, 4, ti.f32)):
 ## 4. 实验结果展示(Demos)
 为了更直观地展示变换效果，我录制了两个 Demo：
 ### 4.1 3D 立方体：旋转与整体平移
+
 可以看到立方体在绕轴自转的同时，位置被固定在屏幕中上方，透视感让远处的边看起来更短一些。
+
 ![Cube Demo](./videos/cube_demo.gif)
 
 ### 4.2 2D 基础：三角形旋转测试
+
 这是最初的实验，验证了旋转矩阵在 2D 平面上的正确性。
+
 ![Triangle Demo](./videos/triangle_demo.gif)
 
 
