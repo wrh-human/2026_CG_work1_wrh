@@ -27,15 +27,16 @@ Work1/
 ### 2.1基础：2D 平面的旋转理论
 在2D平面中，如果我们想让一个点 $(x, y)$ 绕原点旋转 $\theta$ 角度，其实就是初中数学里的三角函数变换。
 通过旋转矩阵 $R_{2d}$，我们可以得到变换后的坐标：
-$$
-\begin{bmatrix} x' \\ y' \end{bmatrix} = \begin{bmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix}
-$$
+
+$$\begin{bmatrix} x' \\ y' \end{bmatrix} = \begin{bmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix}$$
+
 在`main_triangle.py`中，我就是利用这个简单的逻辑让三角形在屏幕上“转”起来的。
 
 ### 2.2进阶：3D立方体的旋转与平移
 到了3D空间，情况变得有趣了。一个立方体有8个顶点，我们要同时考虑$X, Y, Z$三个轴。
 
 **我的理解：** 3D旋转其实就是一种“降维打击”。我们先让立方体绕着不同的轴旋转，然后再通过一个平移矩阵把它“提”到页面上方。
+
 $$M = T(0, 1.2, 0) \cdot R_y(\theta) \cdot R_z(\theta)$$
 * **旋转顺序很重要**：我实验发现，必须先旋转再平移。如果先平移，立方体就会像大摆锤一样绕着原点甩，而不是在原地自转。
 
@@ -66,6 +67,7 @@ def transform_kernel(mvp: ti.types.matrix(4, 4, ti.f32)):
         
         # 4. 映射到屏幕坐标系 (0~1 范围)
         v_pos_2d[i] = ti.Vector([(p.x * w_inv + 1.0) * 0.5, (p.y * w_inv + 1.0) * 0.5])
+```
 ---
 
 ## 4. 实验结果展示 (Demos)
